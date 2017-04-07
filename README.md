@@ -1,5 +1,4 @@
 # fool_named
-we don't like it at all.
 
 This application is wrote for teachers who need to call the roll in a special way.
 The effect what I want is that When you click the button "开始", The list in textarea start to roll, and then you click the button "抽取", the list stop rolling, and the last name is the fool.

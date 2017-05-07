@@ -2,6 +2,7 @@
 
 Now the problem below has been solved.
 The solution is that when you want to control thread B in thread A, you must define them beside the constructor.
+And this version is wrote for mysql, you can't run it everywhere unless you have a online server.
 
 -------------------------I am the Luxuriant split line--------------------------
 

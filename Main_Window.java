@@ -61,7 +61,8 @@ public class Main_Window extends JFrame{
 							int j;
 							for(j=0;j<id.size();j++){
 								jta.append(id.get(j)+"  "+name.get(j)+"  "+sex.get(j)+"\n");
-								jta.setCaretPosition(jta.getText().length());//跟随滚动条显示最新文本行
+								//跟随滚动条显示最新文本行
+								jta.setCaretPosition(jta.getText().length());
 								if(j==(id.size()-1)){
 									j=-1;//此处问题虽解决，但不知为何设j为-1
 								}

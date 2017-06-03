@@ -13,27 +13,27 @@ public class Main_Window extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	Thread t1;//×¢Òâ£¡£¡£¡ÕâÑùĞ´²ÅÄÜÔÚt1ÖĞ²Ù×÷t2£¡£¡£¡
+	Thread t1;//æ³¨æ„ï¼ï¼ï¼è¿™æ ·å†™æ‰èƒ½åœ¨t1ä¸­æ“ä½œt2ï¼ï¼ï¼
 	Thread t2;
 
 	public Main_Window(String Title,int Width,int Height){
 		Container con = getContentPane();
 		JTextArea jta = new JTextArea(12,10);
-		//×¢Òâ´Ë´¦¹ö¶¯Ãæ°åÉèÖÃ²¼¾Ö¹ÜÀíÆ÷´æÒÉ
+		//æ³¨æ„æ­¤å¤„æ»šåŠ¨é¢æ¿è®¾ç½®å¸ƒå±€ç®¡ç†å™¨å­˜ç–‘
 		JScrollPane jsp = new JScrollPane(jta);
 		JPanel jp = new JPanel();
 		con.setLayout(new BorderLayout());
 		jp.setLayout(new FlowLayout());
-		JButton jb1 = new JButton("¿ªÊ¼");
+		JButton jb1 = new JButton("å¼€å§‹");
 		jb1.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent arg0){
 				try{
-					//¼ÓÔØmysql_jdbcÇı¶¯³ÌĞò£¬±ğÍüÁËÌí¼ÓJDBCjar°ü£¡£¡£¡
+					//åŠ è½½mysql_jdbcé©±åŠ¨ç¨‹åºï¼Œåˆ«å¿˜äº†æ·»åŠ JDBCjaråŒ…ï¼ï¼ï¼
 					Class.forName("com.mysql.jdbc.Driver");
-					jta.setText("¼ÓÔØÊı¾İ¿âÇı¶¯³É¹¦\n\n¿ªÊ¼Ò¡½±\n\n");
+					jta.setText("åŠ è½½æ•°æ®åº“é©±åŠ¨æˆåŠŸ\n\nå¼€å§‹æ‘‡å¥–\n\n");
 				}catch(Exception e){
-					jta.setText("¼ÓÔØÊı¾İ¿âÇı¶¯Ê§°Ü\n");
+					jta.setText("åŠ è½½æ•°æ®åº“é©±åŠ¨å¤±è´¥\n");
 					e.printStackTrace();
 				}
 				try{
@@ -42,7 +42,8 @@ public class Main_Window extends JFrame{
 					t1 = new Thread(new Runnable(){
 						Statement sql = connect.createStatement();
 						ResultSet res = sql.executeQuery("select * from iot order by id");
-						//Ê¹ÓÃ¶¯Ì¬Êı×é´æ´¢´ÓÊı¾İ¿âµ÷ÓÃµÄÔªËØ£¬ÒÔÊµÏÖ¶¯Ì¬Ôö³¤£¬±¾´ıÊ¹ÓÃ¼¯ºÏÀà½â¾ö£¬µ«VectorÔÚ¶àÏß³ÌÖĞÔËĞĞËÙ¶È¸ü¿ìĞ©¡£
+						/*ä½¿ç”¨åŠ¨æ€æ•°ç»„å­˜å‚¨ä»æ•°æ®åº“è°ƒç”¨çš„å…ƒç´ ï¼Œä»¥å®ç°åŠ¨æ€å¢é•¿ï¼Œæœ¬å¾…ä½¿ç”¨é›†åˆç±»è§£å†³ï¼Œä½†Vectoråœ¨å¤šçº¿ç¨‹ä¸­
+						è¿è¡Œé€Ÿåº¦æ›´å¿«äº›ã€‚*/
 						Vector<String> id = new Vector<>();
 						Vector<String> name = new Vector<>();
 						Vector<String> sex = new Vector<>();
@@ -60,9 +61,9 @@ public class Main_Window extends JFrame{
 							int j;
 							for(j=0;j<id.size();j++){
 								jta.append(id.get(j)+"  "+name.get(j)+"  "+sex.get(j)+"\n");
-								jta.setCaretPosition(jta.getText().length());//¸úËæ¹ö¶¯ÌõÏÔÊ¾×îĞÂÎÄ±¾ĞĞ
+								jta.setCaretPosition(jta.getText().length());//è·Ÿéšæ»šåŠ¨æ¡æ˜¾ç¤ºæœ€æ–°æ–‡æœ¬è¡Œ
 								if(j==(id.size()-1)){
-									j=-1;//´Ë´¦ÎÊÌâËä½â¾ö£¬µ«²»ÖªÎªºÎÉèjÎª-1
+									j=-1;//æ­¤å¤„é—®é¢˜è™½è§£å†³ï¼Œä½†ä¸çŸ¥ä¸ºä½•è®¾jä¸º-1
 								}
 								try{
 									Thread.sleep(10);
@@ -78,18 +79,20 @@ public class Main_Window extends JFrame{
 				}
 			}
 		});
-		JButton jb2 = new JButton("³éÈ¡");
+		JButton jb2 = new JButton("æŠ½å–");
 		jb2.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent arg0){
 				try{
 					t2 = new Thread(new Runnable(){
-						@SuppressWarnings("deprecation")//ÏÂÃæµ÷ÓÃµÄstop()·½·¨²»±»±àÒëÆ÷ÔŞÍ¬£¬µ«ÈÔ¿ÉÔËĞĞ£¬´Ë¹¦ÄÜÊ¹ÓÃ²¼¶ûÀàĞÍ½øĞĞ¿ØÖÆ¸ü¼Ñ
+						//ä¸‹é¢è°ƒç”¨çš„stop()æ–¹æ³•ä¸è¢«ç¼–è¯‘å™¨èµåŒï¼Œä½†ä»å¯è¿è¡Œï¼Œæ­¤åŠŸèƒ½ä½¿ç”¨å¸ƒå°”ç±»å‹è¿›è¡Œæ§åˆ¶æ›´ä½³
+						@SuppressWarnings("deprecation")
 						public void run(){
 							try{
 								t1.stop();
-								//±ÉÈË´Ë×Å¿ÉÎ½É··Ñ¿àĞÄ£¬JAVAµÄAPIÖĞÃ»ÓĞ´ÓjtaÖĞ»ñÈ¡Ö¸¶¨ĞĞÎÄ±¾µÄ·½·¨£¬µ«ĞĞÓëĞĞÖ®¼ä±ØÈ»´æÔÚ»»ĞĞ·û"\n"£¬
-								//¹ÊÊ¹ÓÃsplit()·½·¨½«jtaÎÄ±¾Ò»ĞĞÒ»ĞĞµØ´æÈëÊı×é£¬ÔÙÒ»ĞĞÒ»ĞĞµØ´ÓÊı×éµ÷ÓÃ¼´¿É¡£
+								/*é„™äººæ­¤ç€å¯è°“ç…è´¹è‹¦å¿ƒï¼ŒJAVAçš„APIä¸­æ²¡æœ‰ä»jtaä¸­è·å–æŒ‡å®šè¡Œæ–‡æœ¬çš„æ–¹æ³•ï¼Œ
+								ä½†è¡Œä¸è¡Œä¹‹é—´å¿…ç„¶å­˜åœ¨æ¢è¡Œç¬¦"\n"ï¼Œæ•…ä½¿ç”¨split()æ–¹æ³•å°†jtaæ–‡æœ¬ä¸€è¡Œä¸€è¡Œ
+								åœ°å­˜å…¥æ•°ç»„ï¼Œå†ä¸€è¡Œä¸€è¡Œåœ°ä»æ•°ç»„è°ƒç”¨å³å¯ã€‚*/
 								String[] line = jta.getText().split("\n");
 								new The_fool(line);                       
 							}catch(Exception e){
@@ -104,7 +107,7 @@ public class Main_Window extends JFrame{
 			}
 		});
 		
-		JButton jb3 = new JButton("Ãûµ¥±à¼­");
+		JButton jb3 = new JButton("åå•ç¼–è¾‘");
 		jb3.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent arg0){
@@ -116,7 +119,7 @@ public class Main_Window extends JFrame{
 		jp.add(jb3);
 		con.add(BorderLayout.NORTH,jsp);
 		con.add(BorderLayout.SOUTH,jp);
-		//Ê¹Ö÷´°¿Ú¾ÓÖĞÏÔÊ¾
+		//ä½¿ä¸»çª—å£å±…ä¸­æ˜¾ç¤º
 		int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 		int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 		int windowWidth = this.getWidth();

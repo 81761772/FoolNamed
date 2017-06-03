@@ -37,9 +37,9 @@ public class Edit_list {
 		jp1.add(jp3,BorderLayout.NORTH);
 		jp1.add(jp4,BorderLayout.CENTER);
 		jp1.add(jp5,BorderLayout.SOUTH);
-		JLabel jl1 = new JLabel("               Ñ§ºÅ");
-		JLabel jl2 = new JLabel("               ĞÕÃû");
-		JLabel jl3 = new JLabel("               ĞÔ±ğ");
+		JLabel jl1 = new JLabel("               å­¦å·");
+		JLabel jl2 = new JLabel("               å§“å");
+		JLabel jl3 = new JLabel("               æ€§åˆ«");
 		jtf1 = new JTextField(8);
 		jtf2 = new JTextField(8);
 		jcb = new JComboBox<>(new MyComboBox());
@@ -49,7 +49,7 @@ public class Edit_list {
 		jp3.add(jtf2);
 		jp3.add(jl3);
 		jp3.add(jcb);
-		JButton jb1 = new JButton("Ìí¼Ó");
+		JButton jb1 = new JButton("æ·»åŠ ");
 		jb1.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent arg0){
@@ -61,16 +61,17 @@ public class Edit_list {
 					public Connection getConnection1(){
 						try{
 							Class.forName("com.mysql.jdbc.Driver");
-							jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØ³É¹¦\n");
+							jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½æˆåŠŸ\n");
 						}catch(ClassNotFoundException e){
-							jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØÊ§°Ü\n");
+							jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½å¤±è´¥\n");
 						}
 						try{
 							con1 = DriverManager.getConnection
-									("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
-							jta.append("Êı¾İ¿âÁ¬½Ó³É¹¦\n");
+									("jdbc:mysql://localhost:3306/test_db?useSSL=true",
+									 "root","123456789");
+							jta.append("æ•°æ®åº“è¿æ¥æˆåŠŸ\n");
 						}catch(SQLException e){
-							jta.append("Êı¾İ¿âÁ¬½ÓÊ§°Ü\n");
+							jta.append("æ•°æ®åº“è¿æ¥å¤±è´¥\n");
 						}
 						return con1;
 					}
@@ -87,7 +88,7 @@ public class Edit_list {
 							sql1.setString(2,name1);
 							sql1.setString(3,sex1);
 							sql1.executeUpdate();
-							jta.append("²åÈë³É¹¦");
+							jta.append("æ’å…¥æˆåŠŸ");
 						}catch(Exception e){
 							new AddObjectWarning();
 						}
@@ -97,7 +98,7 @@ public class Edit_list {
 				ea.doit1();
 			}
 		});
-		JButton jb2 = new JButton("É¾³ı");
+		JButton jb2 = new JButton("åˆ é™¤");
 		jb2.addActionListener(new ActionListener(){
 			
             public void actionPerformed(ActionEvent arg0){
@@ -109,16 +110,16 @@ public class Edit_list {
             		public Connection getConnection2(){
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
-            				jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØ³É¹¦\n");
+            				jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½æˆåŠŸ\n");
             			}catch(ClassNotFoundException e){
-            				jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØÊ§°Ü\n");
+            				jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½å¤±è´¥\n");
             			}
             			try{
             				con2 = DriverManager.getConnection
             						("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
-            				jta.append("Êı¾İ¿âÁ¬½Ó³É¹¦\n");
+            				jta.append("æ•°æ®åº“è¿æ¥æˆåŠŸ\n");
             			}catch(SQLException e){
-            				jta.append("Êı¾İ¿âÁ¬½ÓÊ§°Ü\n");
+            				jta.append("æ•°æ®åº“è¿æ¥å¤±è´¥\n");
             			}
             			return con2;
             		}
@@ -131,7 +132,7 @@ public class Edit_list {
             				sql2 = con2.prepareStatement("delete from iot where id=?");
             				sql2.setString(1,id2);
             				sql2.executeUpdate();
-            				jta.append("É¾³ı³É¹¦\n");
+            				jta.append("åˆ é™¤æˆåŠŸ\n");
             			}catch(Exception e){
             				new DeleteObjectWarning();
             			}
@@ -142,7 +143,7 @@ public class Edit_list {
 			}
 		});
 		
-		JButton jb3 = new JButton("ÏÔÊ¾Ãûµ¥");
+		JButton jb3 = new JButton("æ˜¾ç¤ºåå•");
 		jb3.addActionListener(new ActionListener(){
 			
             public void actionPerformed(ActionEvent arg0){
@@ -155,16 +156,16 @@ public class Edit_list {
             		public Connection getConnection3(){
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
-            				jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØ³É¹¦\n");
+            				jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½æˆåŠŸ\n");
             			}catch(ClassNotFoundException e){
-            				jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØÊ§°Ü\n");
+            				jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½å¤±è´¥\n");
             			}
             			try{
             				con3 = DriverManager.getConnection
             						("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
-            				jta.append("Êı¾İ¿âÁ¬½Ó³É¹¦\n");
+            				jta.append("æ•°æ®åº“è¿æ¥æˆåŠŸ\n");
             			}catch(SQLException e){
-            				jta.append("Êı¾İ¿âÁ¬½ÓÊ§°Ü\n");
+            				jta.append("æ•°æ®åº“è¿æ¥å¤±è´¥\n");
             			}
             			return con3;
             		}
@@ -175,19 +176,19 @@ public class Edit_list {
             			try{
             				sql3 = con3.createStatement();
             				res1 = sql3.executeQuery("select* from iot");
-            				jta.setText("");//Ë£¸öĞÄÑÛ£¬Ê¹ÓÃres1»ñÈ¡Ãûµ¥ÈËÊıÊÜ×è£¬¹ÊÖ±½Ó´ÓjtaÃæ°åÉÏ»ñÈ¡
+            				jta.setText("");//è€ä¸ªå¿ƒçœ¼ï¼Œä½¿ç”¨res1è·å–åå•äººæ•°å—é˜»ï¼Œæ•…ç›´æ¥ä»jtaé¢æ¿ä¸Šè·å–
             				while(res1.next()){
             					String id3 = res1.getString("id");
             					String name3 = res1.getString("name");
             					String sex3 = res1.getString("sex");
             					jta.append(id3+" "+name3+" "+sex3+"\n");
             				}
-            				jta.append("µ÷È¡Íê³É\n");
+            				jta.append("è°ƒå–å®Œæˆ\n");
             				String[] spline = jta.getText().split("\n");
             				int count = spline.length;
-            				jta.append("Ãûµ¥ÈËÊı£º"+(count-1));
+            				jta.append("åå•äººæ•°ï¼š"+(count-1));
             			}catch(SQLException e){
-            				jta.append("µ÷È¡Ê§°Ü");
+            				jta.append("è°ƒå–å¤±è´¥");
             			}
             		}
             	}
@@ -196,7 +197,7 @@ public class Edit_list {
 			}
 		});
 		
-		JButton jb4 = new JButton("²éÕÒ");
+		JButton jb4 = new JButton("æŸ¥æ‰¾");
 		jb4.addActionListener(new ActionListener(){
 			
             public void actionPerformed(ActionEvent arg0){
@@ -209,16 +210,16 @@ public class Edit_list {
             		public Connection getConnection4(){
             			try{
             				Class.forName("com.mysql.jdbc.Driver");
-            				jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØ³É¹¦\n");
+            				jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½æˆåŠŸ\n");
             			}catch(ClassNotFoundException e){
-            				jta.append("Êı¾İ¿âÇı¶¯¼ÓÔØÊ§°Ü\n");
+            				jta.append("æ•°æ®åº“é©±åŠ¨åŠ è½½å¤±è´¥\n");
             			}
             			try{
             				con4 = DriverManager.getConnection
             						("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
-            				jta.append("Êı¾İ¿âÁ¬½Ó³É¹¦\n");
+            				jta.append("æ•°æ®åº“è¿æ¥æˆåŠŸ\n");
             			}catch(SQLException e){
-            				jta.append("Êı¾İ¿âÁ¬½ÓÊ§°Ü\n");
+            				jta.append("æ•°æ®åº“è¿æ¥å¤±è´¥\n");
             			}
             			return con4;
             		}
@@ -238,7 +239,7 @@ public class Edit_list {
             					jta.append(id+" "+name+" "+sex);
             				}
             			}catch(Exception e){
-            				jta.append("²éÕÒÊ§°Ü");
+            				jta.append("æŸ¥æ‰¾å¤±è´¥");
             			}
             		}
             	}

@@ -17,7 +17,7 @@ public class TheFool extends JFrame{
 		String str1 = line[line.length-1];
 		JLabel jl1 = new JLabel("      "+str1);
 		con.add(jl1,BorderLayout.NORTH);
-		String str2 = "           ¿ÉÏ²¿ÉºØ£¬¿ÉÏ²¿ÉºØ";
+		String str2 = "啊哈哈哈哈哈哈";
 		JLabel jl2 = new JLabel(str2);
 		con.add(jl2,BorderLayout.SOUTH);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

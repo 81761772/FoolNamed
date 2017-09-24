@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.sql.*;
 
-public class Editlist {
+public class EditList {
 	JTextField jtf1;
 	JTextField jtf2;
 	JComboBox<String> jcb;

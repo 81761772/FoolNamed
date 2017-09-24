@@ -38,7 +38,7 @@ public class MainWindow extends JFrame{
 				}
 				try{
 					Connection connect = DriverManager.getConnection
-							("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
+							("jdbc:mysql://localhost:3306/zy?useSSL=true","root","123456789");
 					t1 = new Thread(new Runnable(){
 						Statement sql = connect.createStatement();
 						ResultSet res = sql.executeQuery("select * from iot order by id");

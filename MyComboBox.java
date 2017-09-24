@@ -9,7 +9,7 @@ public class MyComboBox extends AbstractListModel<String> implements ComboBoxMod
 	 */
 	private static final long serialVersionUID = 1L;
 	String selecteditem = null;
-	String[] test = {"ÄÐ","Å®"};
+	String[] test = {"ç”·","å¥³"};
 	
 	public String getElementAt(int index) {
 		return test[index];

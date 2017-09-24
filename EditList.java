@@ -18,7 +18,7 @@ public class EditList {
 	
 	public void JFBuild(){
 		JFrame jf = new JFrame();
-		jf.setTitle("Edit_list");
+		jf.setTitle("EditList");
 		jf.setSize(480,210);
 		Container con = jf.getContentPane();
 		con.setLayout(new BorderLayout());

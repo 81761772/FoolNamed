@@ -112,7 +112,7 @@ public class Main_Window extends JFrame{
 		jb3.addActionListener(new ActionListener(){
 			
 			public void actionPerformed(ActionEvent arg0){
-				new Edit_list().init();;
+				new EditList().init();;
 			}
 		});
 		jp.add(jb1);

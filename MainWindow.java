@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.*;
 
-public class Main_Window extends JFrame{
+public class MainWindow extends JFrame{
 	/**
 	 * 
 	 */
@@ -16,7 +16,7 @@ public class Main_Window extends JFrame{
 	Thread t1;//注意！！！这样写才能在t1中操作t2！！！
 	Thread t2;
 
-	public Main_Window(String Title,int Width,int Height){
+	public MainWindow(String Title,int Width,int Height){
 		Container con = getContentPane();
 		JTextArea jta = new JTextArea(12,10);
 		//注意此处滚动面板设置布局管理器存疑
@@ -133,6 +133,6 @@ public class Main_Window extends JFrame{
 	}
 	
 	public static void main(String[] args){
-		new Main_Window("fool_named",260,300);
+		new MainWindow("fool_named",260,300);
 	}
 }

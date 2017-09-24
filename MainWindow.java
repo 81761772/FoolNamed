@@ -95,7 +95,7 @@ public class MainWindow extends JFrame{
 								但行与行之间必然存在换行符"\n"，故使用split()方法将jta文本一行一行
 								地存入数组，再一行一行地从数组调用即可。*/
 								String[] line = jta.getText().split("\n");
-								new The_fool(line);                       
+								new TheFool(line);                       
 							}catch(Exception e){
 								e.printStackTrace();
 							}

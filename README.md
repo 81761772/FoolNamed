@@ -11,7 +11,7 @@ The effect what I want is that When you click the button "开始", The list in t
 But there are something wrong with the "Thread t1" and "Thread t2", I need t2 to stop t1, but don't know how. I have tried several ways just like "use boolean variate" and "use t1.stop() in t2" , but failed.
 Now I'm trying all the time, and also need you to help me.
 
-   --------------------------------------------I am the Luxuriant split line----------------------------------------------------
+ --------------------------------------------I am the Luxuriant split line----------------------------------------------------
    
 Here is instruction:
 

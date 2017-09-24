@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.sql.*;
 
-public class Edit_list {
+public class Editlist {
 	JTextField jtf1;
 	JTextField jtf2;
 	JComboBox<String> jcb;
@@ -265,6 +265,6 @@ public class Edit_list {
 	}	
 	
 	public static void main(String[] args){
-		new Edit_list().init();
+		new EditList().init();
 	}
 }

@@ -67,7 +67,7 @@ public class EditList {
 						}
 						try{
 							con1 = DriverManager.getConnection
-									("jdbc:mysql://localhost:3306/test_db?useSSL=true",
+									("jdbc:mysql://localhost:3306/zy?useSSL=true",
 									 "root","123456789");
 							jta.append("数据库连接成功\n");
 						}catch(SQLException e){
@@ -116,7 +116,7 @@ public class EditList {
             			}
             			try{
             				con2 = DriverManager.getConnection
-            						("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
+            						("jdbc:mysql://localhost:3306/zy?useSSL=true","root","123456789");
             				jta.append("数据库连接成功\n");
             			}catch(SQLException e){
             				jta.append("数据库连接失败\n");
@@ -162,7 +162,7 @@ public class EditList {
             			}
             			try{
             				con3 = DriverManager.getConnection
-            						("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
+            						("jdbc:mysql://localhost:3306/zy?useSSL=true","root","123456789");
             				jta.append("数据库连接成功\n");
             			}catch(SQLException e){
             				jta.append("数据库连接失败\n");
@@ -216,7 +216,7 @@ public class EditList {
             			}
             			try{
             				con4 = DriverManager.getConnection
-            						("jdbc:mysql://localhost:3306/test_db?useSSL=true","root","123456789");
+            						("jdbc:mysql://localhost:3306/zy?useSSL=true","root","123456789");
             				jta.append("数据库连接成功\n");
             			}catch(SQLException e){
             				jta.append("数据库连接失败\n");
